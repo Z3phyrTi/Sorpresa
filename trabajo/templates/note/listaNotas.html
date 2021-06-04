@@ -1,0 +1,34 @@
+{% extends 'base/base.html' %} 
+
+{% block contenido %}
+    <h1>Listar Notas</h1>
+    {% if notas %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Titlo de nota</th>
+                    <th>Descripcion</th>
+                    <th>Fecha de creacion</th>
+                    <th>Fecha de limite</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for Notas in note  %}
+                <tr> 
+                    <td>{{ Notas.titulo_nota }}</td>
+                    <td>{{ Notas.descripcion_nota }}</td>
+                    <td>{{ Notas.fecha_creacion }}</td>
+                    <td>{{ Notas.fecha_limite }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+
+
+    { else }
+        <h2>No hay notas</h2>
+    {% endif %}
+
+{% endblock contenido %}
